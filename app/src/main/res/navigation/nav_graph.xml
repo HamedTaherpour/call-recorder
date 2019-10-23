@@ -12,15 +12,17 @@
         tools:layout="@layout/fragment_list" >
         <action
             android:id="@+id/next_action"
-            app:destination="@id/detailFragment" />
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpTo="@+id/listFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
         android:name="io.hamed.callrecorder.ui.fragment.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" >
-        <action
-            android:id="@+id/next_action"
-            app:destination="@id/listFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_detail" />
 </navigation>

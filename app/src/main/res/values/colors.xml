@@ -8,6 +8,7 @@
     <color name="colorOutgoing">#DB72A2</color>
     <color name="colorIncoming">#55A3DB</color>
     <color name="colorStar">@color/colorAccentB</color>
+    <color name="colorLine">@color/colorPrimary</color>
     <color name="colorText">#F1F1F1</color>
 
 </resources>

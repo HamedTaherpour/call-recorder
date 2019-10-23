@@ -8,15 +8,15 @@ import butterknife.BindView
 import io.hamed.callrecorder.BaseFragment
 import io.hamed.callrecorder.ContactEntity
 
-import io.hamed.callrecorder.R
 import io.hamed.callrecorder.ui.adapter.ContactAdapter
+import androidx.navigation.Navigation
+import io.hamed.callrecorder.R
 
 
 class ListFragment : BaseFragment() {
 
-
     @BindView(R.id.rv)
-    lateinit  var recyclerView: RecyclerView
+    lateinit var recyclerView: RecyclerView
 
     private lateinit var adapter: ContactAdapter
 
@@ -35,7 +35,7 @@ class ListFragment : BaseFragment() {
         return R.layout.fragment_list
     }
 
-    fun recyclerViewHandler(){
+    fun recyclerViewHandler() {
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.setHasFixedSize(true)
         recyclerView.itemAnimator = DefaultItemAnimator()
@@ -49,17 +49,174 @@ class ListFragment : BaseFragment() {
         recyclerView.adapter = adapter
         adapter.setOnItemClickListener(object : ContactAdapter.OnItemClickListener {
             override fun onItemClick(item: ContactEntity) {
-
+                val navController =
+                    Navigation.findNavController(activity!!, R.id.nav_host_fragment)
+                navController.navigate(R.id.next_action)
             }
         })
         val list = listOf(
-            ContactEntity(3,"09371508751","Monica Bellucci","WhatsApp",true,true,"http://uupload.ir/files/pfwz_photo_2019-10-23_16-56-46.jpg"),
-            ContactEntity(1,"09371508754","Pavel Durov","WhatsApp",true,false,"http://uupload.ir/files/m6r_photo_2019-10-22_01-41-09.jpg"),
-            ContactEntity(4,"09371508753","Emma Watson","WhatsApp",false,true,"http://uupload.ir/files/ukkf_26152827_382793632132975_3672520410462683136_n.jpg"),
-            ContactEntity(2,"09371508752","David Beckham","WhatsApp",false,false,"http://uupload.ir/files/cro0_photo_2019-10-20_23-20-26.jpg"),
-            ContactEntity(4,"09371508753","Margot Elise Robbie","WhatsApp",false,true,"http://uupload.ir/files/qhmx_photo_2019-10-23_17-03-04.jpg"),
-            ContactEntity(4,"09371508753","Tom Hardy","WhatsApp",false,true,"http://uupload.ir/files/fdmd_75311726_521610801729566_2373465154581774971_n.jpg"),
-            ContactEntity(4,"09371508753","Evan Rachel Wood","WhatsApp",false,true,"http://uupload.ir/files/equc_67712822_431992684325174_5503876979468970474_n.jpg")
+            ContactEntity(
+                1,
+                "(541) 754-3010",
+                "Tom Hardy",
+                "(541) 754-3010",
+                false,
+                true,
+                "https://api.androidhive.info/json/images/tom_hardy.jpg"
+            ),
+            ContactEntity(
+                1,
+                "(452) 839-1210",
+                "Johnny Depp",
+                "(452) 839-1210",
+                false,
+                false,
+                "https://api.androidhive.info/json/images/johnny.jpg"
+            ),
+            ContactEntity(
+                1,
+                "(541) 453-2311",
+                "Tom Cruise",
+                "(541) 453-2311",
+                false,
+                false,
+                "https://api.androidhive.info/json/images/tom_cruise.jpg"
+            ),
+            ContactEntity(
+                1,
+                "(535) 324-4334",
+                "Keira Knightley",
+                "(535) 324-4334",
+                false,
+                true,
+                "https://api.androidhive.info/json/images/keira.jpg"
+            ),
+            ContactEntity(
+                1,
+                "(767) 544-8867",
+                "Robert De Niro",
+                "(767) 544-8867",
+                true,
+                false,
+                "https://api.androidhive.info/json/images/robert_de.jpg"
+            ),
+            ContactEntity(
+                1,
+                "(564) 333-2452",
+                "Leonardo DiCaprio",
+                "(564) 333-2452",
+                false,
+                false,
+                "https://api.androidhive.info/json/images/leonardo.jpg"
+            ),
+            ContactEntity(
+                1,
+                "(541) 879-3453",
+                "Will Smith",
+                "(541) 879-3453",
+                true,
+                true,
+                "https://api.androidhive.info/json/images/will.jpg"
+            ),
+            ContactEntity(
+                1,
+                "(234) 234-3321",
+                "Russell Crowe",
+                "(234) 234-3321",
+                false,
+                true,
+                "https://api.androidhive.info/json/images/russell.jpg"
+            ),
+            ContactEntity(
+                1,
+                "(567) 754-8945",
+                "Brad Pitt",
+                "(567) 754-8945",
+                false,
+                true,
+                "https://api.androidhive.info/json/images/brad.jpg"
+            ),
+            ContactEntity(
+                1,
+                "(324) 754-5433",
+                "Angelina Jolie",
+                "(324) 754-5433",
+                false,
+                true,
+                "https://api.androidhive.info/json/images/angelina.jpg"
+            ),
+            ContactEntity(
+                1,
+                "(788) 343-3433",
+                "Kate Winslet",
+                "(788) 343-3433",
+                true,
+                true,
+                "https://api.androidhive.info/json/images/kate.jpg"
+            ),
+            ContactEntity(
+                1,
+                "(865) 755-3555",
+                "Christian Bale",
+                "(865) 755-3555",
+                false,
+                false,
+                "https://api.androidhive.info/json/images/christian.jpg"
+            ),
+            ContactEntity(
+                1,
+                "(445) 776-9076",
+                "Morgan Freeman",
+                "(445) 776-9076",
+                false,
+                true,
+                "https://api.androidhive.info/json/images/morgan.jpg"
+            ),
+            ContactEntity(
+                1,
+                "(544) 454-4544",
+                "Hugh Jackman",
+                "(544) 454-4544",
+                true,
+                true,
+                "https://api.androidhive.info/json/images/hugh.jpg"
+            ),
+            ContactEntity(
+                1,
+                "(454) 455-5445",
+                "Keanu Reeves",
+                "(454) 455-5445",
+                false,
+                true,
+                "https://api.androidhive.info/json/images/keanu.jpg"
+            ),
+            ContactEntity(
+                1,
+                "(541) 454-4544",
+                "Tom Hanks",
+                "(541) 454-4544",
+                true,
+                true,
+                "https://api.androidhive.info/json/images/tom.jpg"
+            ),
+            ContactEntity(
+                1,
+                "(545) 454-2567",
+                "Scarlett Johansson",
+                "(545) 454-2567",
+                false,
+                true,
+                "https://api.androidhive.info/json/images/scarlett.jpg"
+            ),
+            ContactEntity(
+                1,
+                "(444) 444-4444",
+                "Robert Downey Jr.",
+                "(444) 444-4444",
+                false,
+                false,
+                "https://api.androidhive.info/json/images/robert.jpg"
+            )
         )
         adapter.submitList(list)
     }
